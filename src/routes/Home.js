@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import ToDo from "../components/ToDo";
-import { actionCreators } from "../store";
+import { addToDo } from "../store";
 
 
 
@@ -40,9 +40,10 @@ function mapDispatchProps(dispatch) {
     return {        
         // addToDo가 실행되면 dispatch 호출
         // 이 addToDo가 props가 되서 Home에 전달된다.
-        addToDo: text => dispatch(actionCreators.addToDo(text))
+        addToDo: text => dispatch(addToDo(text))
     }
 }
 
+// mapStateToProps와 mapDispatchProps를 Home에 props로 주입한다.
 export default connect(mapStateToProps, mapDispatchProps) (Home)
     
